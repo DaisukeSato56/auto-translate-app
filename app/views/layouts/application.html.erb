@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AutoTranslateApp</title>
+    <title>GIZMODO</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <header class="main_headder">
+        <h1 class="title"><%= link_to "GIZMODO", root_path %></h1>
+      </header>
+      <%= yield %>
+      <footer class="main_footer">© 2017 Gizmodo Media Group</footer>
+    </div>
   </body>
 </html>

@@ -1,0 +1,7 @@
+<div class="contents">
+  <p><%= link_to "< 戻る", :back %></p>
+    <h2 class="article_title"><%= @article.ja_title %></h2>
+    <p class="article_date"><%= @article.date %></p>
+    <p class="article_body"><%= @article.ja_body %></p>
+    <p class="article_source">元記事 : <%= link_to @article.url, @article.url, target: "_blank" %></p>
+</div>

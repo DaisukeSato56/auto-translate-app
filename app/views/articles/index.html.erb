@@ -1,2 +1,13 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
+<div class="contents">
+  <% if @articles.present? %>
+    <% @articles.each do |article| %>
+      <h2 class="article_title"><%= link_to article.ja_title.truncate(40), article_path(article) %></h2>
+      <p class="article_date"><%= article.date %></p>
+      <p class="article_body"><%= article.ja_body.truncate(500) %></p>
+      <p class="article_source">元記事 : <%= link_to article.url, article.url, target: "_blank" %></p>
+    <% end %>
+    <%= paginate(@articles) %>
+  <% else %>
+    <p>表示する記事がありません。</p>
+  <% end %>
+</div>
